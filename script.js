@@ -1,13 +1,4 @@
 'use strict';
-// . for class # for id
-/*
-document.querySelector('.message').textContent = '🎉 Correct number!';
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 20;
-
-document.querySelector('.guess').value = 13;
-*/
 
 const won = function () {
   document.querySelector('body').style.backgroundColor = '#60b347';
