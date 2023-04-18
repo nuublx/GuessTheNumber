@@ -1,5 +1,13 @@
 'use strict';
+// . for class # for id
+/*
+document.querySelector('.message').textContent = '🎉 Correct number!';
 
+document.querySelector('.number').textContent = 13;
+document.querySelector('.score').textContent = 20;
+
+document.querySelector('.guess').value = 13;
+*/
 
 const won = function () {
   document.querySelector('body').style.backgroundColor = '#60b347';
@@ -28,27 +36,18 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     message = '😕 Guess a number to check!';
 
-    // Player wins
+    // guess is right
   } else if (guess === secretNumber) {
     debugger;
     message = won();
-    // Guess too high
-  } else if (guess > secretNumber) {
+    // Guess is wrong
+  } else {
     if (score > 1) {
-      if (secretNumber - guess > 5) message = '📈 Too high!';
-      else message = '📈 little bit high!';
-
-      score--;
-    } else {
-      message = '🙅‍♂️ You lost the game!';
-      score = 0;
-    }
-
-    // Guess too low
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      if (secretNumber - guess > 5) message = '📉 Too low!';
-      else message = '📉 little bit low!';
+      if (secretNumber - guess > 5)
+        message = guess > secretNumber ? '📈 Too high!' : '📉 Too low!';
+      else
+        message =
+          guess > secretNumber ? '📈 little bit high!' : '📉 little bit low!';
       score--;
     } else {
       message = '🙅‍♂️ You lost the game!';
